@@ -11,7 +11,7 @@ check <- function (test, probe) {
     }
     else flag=FALSE
   }
-return(flag)
+  return(flag)
 }
 
 data <- read.csv("outcome-of-care-measures.csv", colClasses = "character")    ##Read data from file
