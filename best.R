@@ -14,7 +14,6 @@ best <- function(state, outcome) {
   else
   
       ## Return hospital name in that state with lowest 30-day death
-  ## rate
       s <-split(subset, subset$State) ##splitting data set to states data
       work <- s[[state]] ##selecting the exact state
     ##work[sapply(work[,3:5], min, na.rm = TRUE),] ##apply work
@@ -22,5 +21,3 @@ best <- function(state, outcome) {
     x <- which (work[,index] == min(work[,index], na.rm = TRUE)) ##detrmining index of the hospital with lowest rating
     return(work[x,1])
 }
-
-

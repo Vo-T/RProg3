@@ -1,4 +1,6 @@
 ## this is an auxiliary script containing several common function
+data <- read.csv("outcome-of-care-measures.csv", colClasses = "character")    ##Read data from file
+income <- c("heart attack", "heart failure", "pneumonia") ##defining test
 
 check <- function (test, probe) {
   test_end = length(test)
@@ -11,3 +13,6 @@ check <- function (test, probe) {
   }
 return(flag)
 }
+
+data <- read.csv("outcome-of-care-measures.csv", colClasses = "character")    ##Read data from file
+income <- c("heart attack", "heart failure", "pneumonia") ##creating vector to test input
