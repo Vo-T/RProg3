@@ -1,6 +1,8 @@
 ## this is an auxiliary script containing several common function
-data <- read.csv("outcome-of-care-measures.csv", colClasses = "character")    ##Read data from file
+input <- read.csv("outcome-of-care-measures.csv", colClasses = "character")    ##Read data from file
 income <- c("heart attack", "heart failure", "pneumonia") ##defining test
+data <-input[,c(2,7,11,17,23)]     ##Subsetting the data as we need only those variables
+for (i in 3:5) data[,i] <- as.numeric(data[,i])
 
 check <- function (test, probe) {
   test_end = length(test)
@@ -13,6 +15,3 @@ check <- function (test, probe) {
   }
   return(flag)
 }
-
-data <- read.csv("outcome-of-care-measures.csv", colClasses = "character")    ##Read data from file
-income <- c("heart attack", "heart failure", "pneumonia") ##creating vector to test input
